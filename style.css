@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+.clock-container {
+    position: relative;
+}
+
+#stopwatch {
+    font-size: 3em;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.clock-hands {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateHands 60s linear infinite;
+}
+
+.clock-hands::before,
+.clock-hands::after {
+    content: '';
+    position: absolute;
+    background-color: #ffcc00;
+    transform-origin: 50% 100%;
+}
+
+.clock-hands::before {
+    height: 50%;
+    width: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%) rotate(0deg);
+}
+
+.clock-hands::after {
+    height: 40%;
+    width: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%) rotate(0deg);
+}
+
+#buttons {
+    text-align: center;
+}
+
+button {
+    font-size: 1.5em;
+    margin: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+li {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #ffcc00;
+}
+
+@keyframes rotateHands {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

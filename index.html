@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Attractive Clock Stopwatch</title>
+</head>
+<body>
+    <div class="clock-container">
+        <div id="stopwatch" class="clock-face">00:00:00</div>
+        <div class="clock-hands"></div>
+    </div>
+    <div id="buttons">
+        <button id="startBtn" onclick="start()">Start</button>
+<button id="pauseBtn" onclick="pause()" disabled>Pause</button>
+<button id="resetBtn" onclick="reset()" disabled>Reset</button>
+<button id="lapBtn" onclick="lap()" disabled>Lap</button>
+
+
+    </div>
+    <ul id="laps"></ul>
+    <script src="script.js"></script>
+</body>
+</html>
